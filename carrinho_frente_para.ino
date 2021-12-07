@@ -5,39 +5,19 @@ AF_DCMotor motor_esq(2);
 AF_DCMotor motor_dir(3); 
 
 int SEN1, SEN2, SEN3;
-int leftOfset = 0, rigthOfset = 0, center = 0;
 int startSpeed = 100, brake = 40;
 
 int senlimiar = 5;
 
 int left = startSpeed, rigth = startSpeed;
 
-/*void calibrate (){
-  for(int x = 0; x<10; x++){
-      delay(200);
-      SEN1 = analogRead(3);
-      SEN2 = analogRead(4);
-      SEN3 =  analogRead(5);
 
-      leftOfset += SEN1;
-      center += SEN2;
-      rigth += SEN3;
-  }
-  
-  leftOfset = leftOfset/10;
-  center = center/10;
-  rigthOfset = rigthOfset/10;
-
-  leftOfset = center - leftOfset;
-  rigthOfset = center - rigthOfset;
-}*/
 
 void setup() {
   // put your setup code here, to run once:
   motor_esq.setSpeed(startSpeed);
   motor_dir.setSpeed(startSpeed);
   delay(1000);
-  //calibrate();
   delay(3000);
   Serial.begin(9600);
   Serial.print("hello word!");
